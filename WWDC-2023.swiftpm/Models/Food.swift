@@ -7,6 +7,7 @@ struct Food: Identifiable {
     let origin: String
     let ingredients: [Ingredient]
     let ways: [Way]
+    let image: String
 }
 
 struct foodLists {
@@ -36,7 +37,7 @@ struct foodLists {
         Way(amount: 3, text: "Masak sayur - sayuran di penggorengan sebanyak 3 menit"),
         Way(amount: 0.25, text: "Masukkan 1/4 kg ayam yang sudah matang ke dalam penggorengan"),
         Way(amount: 2, text: "Masukkan 2 sendok makan minyak wijen ke dalam penggorengan"),
-        Way(amount: 3, text: "Tambahkan tiga butir telur ke dalam penggorengan"),
+        Way(amount: 3, text: "Tambahkan 3 butir telur ke dalam penggorengan"),
         Way(amount: 4, text: "Masukkan 4 cangkir nasi putih ke dalam penggorengan"),
-    ])]
+    ], image: "Nasi-Goreng")]
 }

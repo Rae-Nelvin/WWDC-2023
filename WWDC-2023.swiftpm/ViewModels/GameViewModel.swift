@@ -24,7 +24,7 @@ final class GameViewModel: ObservableObject {
     }
     
     func checkAnswer(answer1: Float, answer2: Float, amount: Float) {
-        if (calculateResult(answer1: answer1, answer2: answer2, amount: amount) == true) {
+        if (calculateResult(answer1: answer1, answer2: answer2, amount: amount) == true && counter < food.ways.count) {
             counter += 1
             checkWin()
             chosenOperator = getOperator()

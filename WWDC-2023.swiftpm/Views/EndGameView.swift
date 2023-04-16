@@ -13,31 +13,32 @@ struct EndGameView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if gvm.isWin ?? true {
-                    VStack {
-                        Text(gvm.player.name!)
-                        Text("(gvm.player.health)")
-                        Text("Your \(gvm.food.name) is ready to served!")
-                    }
-                    .navigationTitle("Congratulations you have won!")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                if (gvm.isWin == true) {
+                    WinningGameView(gvm: gvm)
                 } else {
-                    VStack {
-                        Text(gvm.player.name!)
-                        Text("Your \(gvm.food.name) is failed to served!")
-                    }
-                    .navigationTitle("You Failed!")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    LosingGameView(gvm: gvm)
                 }
-                Button(action: {
-                    gvm.currentPage = "StartView"
-                }, label: {
-                    Text("Go Back to Home")
-                })
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarBackButtonHidden(true)
         .navigationTitle("")
+    }
+}
+
+struct BackToHomeButton: View {
+    @StateObject var gvm: GameViewModel
+    
+    var body: some View {
+        Button(action: {
+            gvm.currentPage = "StartView"
+        }, label: {
+            Text("Go Back To Home")
+                .font(.title)
+                .foregroundColor(Color.white)
+        })
+        .padding(EdgeInsets(top: 25, leading: 50, bottom: 25, trailing: 50))
+        .background(Color("Red-Custom"))
+        .cornerRadius(10)
     }
 }
