@@ -15,11 +15,6 @@ struct RootView: View {
             switch gvm.currentPage {
             case "StartView":
                 StartView(gvm: gvm)
-                    .onAppear(){
-                        gvm.isWin = false
-                        gvm.isPlay = true
-                        gvm.player = Player()
-                    }
             case "HowToPlayView":
                 HowToPlayView(gvm: gvm)
             case "GameView":

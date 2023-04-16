@@ -23,6 +23,11 @@ struct StartView: View {
 
                 Spacer()
             }
+            .onAppear(){
+                gvm.isWin = false
+                gvm.isPlay = true
+                gvm.player = Player()
+            }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Yellow-Custom"))
         }

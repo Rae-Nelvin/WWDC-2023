@@ -15,8 +15,12 @@ struct WinningGameView: View {
             Text("Congratulations " + gvm.player.name! + " !!")
                 .font(.system(size: 60, weight: .bold))
                 .foregroundColor(Color("Red-Custom"))
-            ForEach(0..<gvm.player.health, id: \.self) { heart in
-                Image("Heart")
+            HStack(spacing: 20) {
+                ForEach(0..<gvm.player.health, id: \.self) { heart in
+                    Image("Heart")
+                        .resizable()
+                        .frame(width: 75, height: 75)
+                }
             }
             Image(gvm.food.image)
                 .resizable()

@@ -24,7 +24,7 @@ final class GameViewModel: ObservableObject {
     }
     
     func checkAnswer(answer1: Float, answer2: Float, amount: Float) {
-        if (calculateResult(answer1: answer1, answer2: answer2, amount: amount) == true && counter < food.ways.count) {
+        if (calculateResult(answer1: answer1, answer2: answer2, amount: amount) == true) {
             counter += 1
             checkWin()
             chosenOperator = getOperator()
@@ -61,13 +61,13 @@ final class GameViewModel: ObservableObject {
     }
     
     private func checkWin() {
-        if checkHealth() == false || (foodLists.lists.count == counter && checkHealth() == false) {
+        if (checkHealth() == false || (food.ways.count == counter && checkHealth() == false)) {
             isPlay = false
             isWin = false
         }
         
-        if foodLists.lists.count == counter {
-            isPlay = true
+        if (food.ways.count == counter) {
+            isPlay = false
             isWin = true
         }
     }
