@@ -18,8 +18,10 @@ struct LosingGameView: View {
             Image(gvm.food.image)
                 .resizable()
                 .frame(width: 600, height: 550)
+                .overlay(Color.black.blendMode(.saturation))
             Text("Your \(gvm.food.name) is failed to served!")
                 .font(.system(size: 40, weight: .semibold))
+                .foregroundColor(Color.black)
             BackToHomeButton(gvm: gvm)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

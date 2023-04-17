@@ -27,6 +27,7 @@ struct WinningGameView: View {
                 .frame(width: 600, height: 550)
             Text("Your \(gvm.food.name) is ready to served!")
                 .font(.system(size: 40, weight: .semibold))
+                .foregroundColor(Color.black)
             BackToHomeButton(gvm: gvm)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

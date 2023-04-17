@@ -47,5 +47,6 @@ struct RulesText: View {
         Text(rules)
             .font(.system(size: 20, weight: .semibold))
             .padding(.vertical, 5)
+            .foregroundColor(Color.black)
     }
 }
