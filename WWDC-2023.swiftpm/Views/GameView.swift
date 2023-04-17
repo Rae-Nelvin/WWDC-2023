@@ -43,7 +43,7 @@ struct GameView: View {
                     Text(gvm.chosenOperator)
                         .font(.system(size: 40, weight: .semibold))
                     GameIntField2(input2: $input2)
-                    Text(" =   \(gvm.cook().amount, specifier: "%.2f")")
+                    Text(" =   \(gvm.cook().amount, specifier: "%.2g")")
                         .font(.system(size: 40, weight: .semibold))
                 }
                 .padding(.horizontal, 80)

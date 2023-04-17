@@ -9,7 +9,7 @@ struct StartView: View {
             VStack {
                 Spacer()
                 
-                Text("Counting Cooking Mama")
+                Text("Cook Smart")
                     .font(.system(size: 60, weight: .bold, design: .default))
                     .foregroundColor(Color("Red-Custom"))
                     .padding()

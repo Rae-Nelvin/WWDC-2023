@@ -11,8 +11,10 @@ final class GameViewModel: ObservableObject {
     private var counter: Int = 0
     
     init() {
+        let shuffledObjects = foodLists.lists.shuffled()
+        self.food = shuffledObjects.prefix(1)[0]
+        
         self.operators = ["+", "-", "/", "*"]
-        self.food = foodLists.lists[0]
     }
     
     func cook() -> Way {
